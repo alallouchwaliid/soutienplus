@@ -1,0 +1,257 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoutienPlus - Soutien Scolaire à Meknès</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+<a href="{% url 'home' %}" style="text-decoration: none;">
+    <div class="logo" style="display: flex; align-items: center; gap: 15px;">
+        <img  src="{% static 'images/logo.png' %}" alt="Logo SoutienPlus" style="width: 80px; height: 80px; object-fit: contain;">
+        <h1 style="margin: 0; font-size: 2rem; color: var(--bleu-fonce);">SoutienPlus</h1>
+    </div>
+</a>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="floating-elements">
+            <div class="floating-element">📚</div>
+            <div class="floating-element">🎓</div>
+            <div class="floating-element">📐</div>
+            <div class="floating-element">💻</div>
+        </div>
+        <div class="hero-content">
+            <h1>SoutienPlus</h1>
+            <p class="hero-slogan">ON EST PASSÉS PAR LÀ — ON T'AIDE À Y ARRIVER</p>
+            <p class="hero-description">Soutien scolaire d'excellence à Meknès par des diplômés prestigieux de CPGE. Cours de maths, physique et informatique pour tous les niveaux.</p>
+            <a href="#contact" class="cta-button">Commencer maintenant</a>
+        </div>
+    </section>
+{% if messages %}
+<div id="floating-message-container">
+    {% for message in messages %}
+        <div class="floating-message alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nos Services</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Mathématiques</h3>
+                    <p>Cours individuels et collectifs en mathématiques pour tous les niveaux, du collège au lycée. Méthodes pédagogiques adaptées à chaque filière.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3>Physique</h3>
+                    <p>Soutien en physique avec des approches pratiques et théoriques. Préparation aux examens et aide aux devoirs.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Informatique</h3>
+                    <p>Initiation et perfectionnement en informatique. Programmation, algorithmique et outils numériques.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Cours à Domicile</h3>
+                    <p>Nous nous déplaçons chez vous pour un suivi personnalisé dans le confort de votre domicile.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Cours Collectifs</h3>
+                    <p>Sessions de groupe pour favoriser l'échange et la motivation entre élèves de même niveau.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Remise à Niveau</h3>
+                    <p>Programme spécialisé pour aider les élèves en difficulté à retrouver leur équilibre scolaire.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2>Pourquoi SoutienPlus ?</h2>
+                    <p>Fondée par des élèves prestigieux de Classes Préparatoires aux Grandes Écoles (CPGE), SoutienPlus apporte une expertise académique de haut niveau à Meknès.</p>
+                    <p>Notre équipe comprend les défis auxquels font face les élèves car nous sommes passés par les mêmes étapes. Cette expérience nous permet d'offrir un accompagnement personnalisé et efficace.</p>
+                    <p>Nous couvrons actuellement toute la ville de Meknès avec des cours adaptés à toutes les filières, de la première année de collège jusqu'au terminal.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            Élèves accompagnés
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">95%</span>
+                            Taux de réussite
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">🎯</div>
+                    <h3>Notre Mission</h3>
+                    <p>Accompagner chaque élève vers la réussite scolaire grâce à des méthodes pédagogiques éprouvées et un suivi personnalisé.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>Contactez-nous</h2>
+                    <p>Prêt à commencer votre parcours vers la réussite ? Contactez-nous dès maintenant !</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>+212 691-676127<br>+212 771-190644</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>soutienplus.ma@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Localisation</h4>
+                            <p>Meknès, Maroc<br>Déplacements dans toute la ville</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horaires</h4>
+                            <p>Lun - Sam: 9h00 - 21h00<br>Dim: Sur rendez-vous</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/soutienplus.ma?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@soutienplus.ma?_t=ZM-8yFsSjO9cXA&_r=1" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/qr/EYRDF4ZKVF2BL1" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+<form class="contact-form" method="POST" action="">
+    {% csrf_token %}
+
+    <!-- Nom complet -->
+    <div class="form-group">
+        <label for="nom">Nom complet</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+        <label for="email">Adresse email</label>
+        <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+    </div>
+
+    <!-- Téléphone -->
+    <div class="form-group">
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="Entrez votre numéro" required>
+    </div>
+
+    <!-- Niveau scolaire -->
+    <div class="form-group">
+        <label for="niveau">Niveau scolaire</label>
+        <select id="niveau" name="niveau" required>
+            <option value="">-- Sélectionnez un niveau --</option>
+            <option value="college">Collège</option>
+            <option value="lycee1">Lycée - 1ère année</option>
+            <option value="lycee2">Lycée - 2ème année</option>
+            <option value="terminale">Terminale</option>
+        </select>
+    </div>
+
+    <!-- Message -->
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Votre message"></textarea>
+    </div>
+
+    <!-- Bouton d’envoi -->
+    <div class="form-group">
+        <button type="submit" class="submit-btn">Envoyer la demande</button>
+    </div>
+</form>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SoutienPlus. Tous droits réservés. | Soutien scolaire d'excellence à Meknès</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
